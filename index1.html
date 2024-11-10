@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Guides</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        #product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 100px;
+            padding: 16px;
+            text-align: center;
+            margin: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, width 0.3s, height 0.3s;
+            overflow: hidden;
+            position: relative;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card img {
+            height: 64px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            font-size: 1em;
+            margin: 12px 0 8px;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.8em;
+            margin: 4px 0;
+        }
+
+        .product-details {
+            display: none;
+            font-size: 0.75em;
+            color: #444;
+            margin-top: 8px;
+            text-align: left;
+        }
+
+        .product-card:hover {
+            transform: scale(1.1);
+            width: 300px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+            margin-right: 16px;
+        }
+
+        .product-card:hover .product-details {
+            display: block;
+            margin-left: 16px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .lifecycle {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+    </style>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./images/logo.webp" width="40px" height="40px" alt="">
+                <a href="#">PlanetPicks</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index1.html">Home</a></li>
+                <li><a href="./index.html">Recommender</a></li>
+                <li><a href="http://10.10.117.185:8501">EcoBot</a></li>
+                <li><a href="#harsh">About</a></li>
+                <li><a id="prof" href="dashboard.html">👤</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <div class="search-container-header">
+            <div class="innerhead">
+            <h2>Welcome to PlanetPicks 🌍</h2>
+            <h4>Our smart recommendations connect you with the best in eco-friendly products and sustainable alternatives, all <br>           tailored to fit your lifestyle..</h4>
+                <h4>Shop responsibly. Make an impact.</h4>
+            </div>
+        </div>
+        <button class="recommender-button" ><a id="buttonREC" href="./index.html" style="color: white;">Recommender</a></button>
+    </div>
+
+    <!-- Guides Container -->
+    <section id="harsh" class="guides-container">
+        <h2>IMPACTS</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="./images/Encourage Sustainable Consumer Behavior with color white and green.png" alt="Encourage Sustainable Consumer Behavior">
+                <p>Encourage Sustainable Consumer Behavior</p>
+            </div>
+            <div class="card">
+                <img src="./images/Recommendation Engine Features with color white and green.png" alt="Recommendation Engine Features">
+                <p>Recommendation Engine Features</p>
+            </div>
+            <div class="card">
+                <img src="./images/Product Lifecycle Analysis with color white and green.png" alt="Product Lifecycle Analysis">
+                <p>Product Lifecycle Analysis</p>
+            </div>
+            <div class="card">
+                <img src="./images/Impact on Consumer Choices with color white and green.png" alt="Impact on Consumer Choices">
+                <p>Impact on Consumer Choices</p>
+            </div>
+            <div class="card">
+                <img src="./images/Educational Component with color white and green.png" alt="Educational Component">
+                <p>Educational Component</p>
+            </div>
+            <div class="card">
+                <img src="./images/Environmentally Responsible Brands with color white and green.png" alt="Educational Component">
+                <p>Enviromentally Reponsible Brand</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <div id="about"></div>
+
+     <div class="recommend-all-products" id="recommendations" style="background-color: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+    <!--<div style="background-color: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); padding: 20px; margin: 10px;">
+            <h2 class="section-title" style="place-self: center; font-size: 30px; color: green;">Recommended For You</h2>
+            <div id="recommended-container"></div>
+        </div> -->
+        
+        <div class="section-divider"></div>
+        
+        <div class="header">
+            <h1>All Products</h1>
+        </div>
+        <div id="product-container"></div>
+    </div>
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="#features"><i class="fas fa-chevron-right"></i> Features</a>
+                <a href="#about"><i class="fas fa-chevron-right"></i> About</a>
+            </div>
+
+            <div class="box">
+                <h3>Extra Links</h3>
+                <a href="#"><i class="fas fa-chevron-right"></i> Ask Questions</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Terms of Use</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a>
+            </div>
+
+            <div class="box">
+                <h3>Helpful Resources</h3>
+                <a href="#"><i class="fas fa-chevron-right"></i> FAQs</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> User Guides</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Support Center</a>
+            </div>
+
+            <div class="box">
+                <h3>Stay Connected</h3>
+                <a href="#"><i class="fas fa-chevron-right"></i> Future Scope</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Community Forum</a>
+                <a href="#"><i class="fas fa-chevron-right"></i> Newsletter</a>
+            </div>
+        </div>
+
+        <div class="credit">
+            © Copyright – All Rights Reserved
+            <a href="#" target="_blank"><span>Team PhantomTroups</span></a>
+        </div>
+    </section>
+    <script>
+        const products = [
+            {
+                name: "Soap",
+                brand: "GreenPure",
+                description: "Natural handmade soap with essential oils",
+                lifecycle: "Biodegradable"
+            },
+            {
+                name: "Shampoo",
+                brand: "EcoLux",
+                description: "Sulfate-free formula with natural extracts",
+                lifecycle: "Recyclable"
+            },
+            {
+                name: "Toothpaste",
+                brand: "NatureSafe",
+                description: "Natural mint and antibacterial properties",
+                lifecycle: "Sustainable"
+            },
+            {
+                name: "Body Lotion",
+                brand: "BioBreeze",
+                description: "Moisturizing lotion with shea butter",
+                lifecycle: "Reusable"
+            },
+            {
+                name: "Cosmetics",
+                brand: "PlanetGlow",
+                description: "Mineral-based makeup for sensitive skin",
+                lifecycle: "Ethical"
+            },
+            {
+                name: "Detergent",
+                brand: "EarthEssence",
+                description: "Plant-based powerful cleaning action",
+                lifecycle: "Biodegradable"
+            },
+            {
+                name: "Hair Oil",
+                brand: "SustainCare",
+                description: "Natural oils for hair growth and shine",
+                lifecycle: "Sustainable"
+            },
+            {
+                name: "Toothbrush",
+                brand: "NaturalTouch",
+                description: "Bamboo with charcoal-infused bristles",
+                lifecycle: "Compostable"
+            },
+            {
+                name: "Face Wash",
+                brand: "GreenPure",
+                description: "Gentle cleanser with aloe vera",
+                lifecycle: "Recyclable"
+            },
+            {
+                name: "Foundation",
+                brand: "EcoLux",
+                description: "Natural coverage with SPF 30",
+                lifecycle: "Sustainable"
+            }
+        ];
+
+        function getProductImage(productName) {
+            const images = {
+                "Soap": "./images/004-soap.png",
+                "Shampoo": "./images/005-shampoo.png",
+                "Toothpaste": "./images/007-toothpaste.png",
+                "Body Lotion": "./images/002-body-lotion.png",
+                "Cosmetics": "./images/003-perfume.png",
+                "Detergent": "./images/008-detergent.png",
+                "Hair Oil": "./images/006-serum.png",
+                "Toothbrush": "./images/001-toothbrush.png",
+                "Face Wash": "./images/009-lotion.png",
+                "Foundation": "./images/010-foundation.png"
+            };
+            return images[productName] || "path/to/default_image.jpg";
+        }
+
+        function createProductCard(productName, brandName, description, lifecycle) {
+            const card = document.createElement("div");
+            card.className = "product-card";
+            
+            const img = document.createElement("img");
+            img.src = getProductImage(productName);
+            img.alt = `${productName} image`;
+            card.appendChild(img);
+            
+            const textContainer = document.createElement("div");
+
+            const productNameElement = document.createElement("h3");
+            productNameElement.textContent = productName;
+            textContainer.appendChild(productNameElement);
+
+            const brandNameElement = document.createElement("p");
+            brandNameElement.textContent = brandName;
+            textContainer.appendChild(brandNameElement);
+
+            const detailsElement = document.createElement("div");
+            detailsElement.className = "product-details";
+            
+            const descriptionPara = document.createElement("p");
+            descriptionPara.textContent = description;
+            detailsElement.appendChild(descriptionPara);
+
+            const lifecyclePara = document.createElement("p");
+            lifecyclePara.className = "lifecycle";
+            lifecyclePara.textContent = lifecycle;
+            detailsElement.appendChild(lifecyclePara);
+
+            textContainer.appendChild(detailsElement);
+            card.appendChild(textContainer);
+
+            return card;
+        }
+
+        const container = document.getElementById("product-container");
+        products.forEach(product => {
+            const card = createProductCard(
+                product.name, 
+                product.brand, 
+                product.description, 
+                product.lifecycle
+            );
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

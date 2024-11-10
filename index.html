@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Friendly Product Recommendation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <style>
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background-image: url(images/img2_enhanced.png);
+        background-size: cover;  
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        color: #4caf50;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        width: 100%;
+        max-width: 600px;
+        margin-top: 100px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .recommendations {
+        margin-top: 30px;
+        width: 100%;
+      }
+
+      .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+
+      .product h3 {
+        margin: 0 0 10px;
+        color: #4caf50;
+      }
+
+      #recommendations img {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+
+    <header>
+      <nav>
+        <div class="logo">
+            <img src="./images/logo.webp" width="40px" height="40px" alt="">
+          <a href="#">PlanetPicks</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./index1.html">Home</a></li>
+          <li><a href="./index.html">Recommender</a></li>
+          <li><a href="./index1.html#about">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Eco-Friendly Product Recommendation</h1>
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Describe the product you're looking for"
+      />
+      <button onclick="getRecommendations()">Get Recommendations</button>
+    </div>
+    <div class="guides-container">
+      <div guides-container>
+        <h2>Recommendation</h2>
+        <div class="grid" id="recommendations" style="margin: 5px"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
